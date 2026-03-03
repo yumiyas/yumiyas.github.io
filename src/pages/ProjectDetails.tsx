@@ -1,8 +1,13 @@
 import { useParams, Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
+import { useEffect } from 'react';
 
 export default function ProjectDetails() {
     const { id } = useParams();
+
+    useEffect(() => {
+        window.scrollTo(0, 0);
+    }, [id]);
 
     // Mock data mapping based on the ID
     const projectsData: Record<string, any> = {
@@ -10,7 +15,7 @@ export default function ProjectDetails() {
             title: 'Automation Security Alert',
             type: 'Automation',
             desc: 'Improving the efficiency of the soc team  in analyzing attack logs that attack servers on Wazuh by using n8n integrated with telegram',
-            img: '/public/automation.png',
+            img: '/automation.png',
             tools: ['Wazuh', 'n8n', 'Telegram'],
             details: (
                 <div className="space-y-10">
