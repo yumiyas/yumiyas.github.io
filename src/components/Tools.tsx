@@ -38,7 +38,7 @@ export default function Tools() {
                     initial={{ opacity: 0, x: -30 }}
                     whileInView={{ opacity: 1, x: 0 }}
                     viewport={{ once: true }}
-                    className="flex flex-col gap-6 overflow-hidden relative w-full h-full justify-center"
+                    className="flex flex-col gap-6 overflow-hidden relative w-full max-w-full h-full justify-center"
                 >
                     {/* Left Marquee (Scrolls Left) */}
                     <div className="flex w-max animate-marquee hover:[animation-play-state:paused] gap-4">

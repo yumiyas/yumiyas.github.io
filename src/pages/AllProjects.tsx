@@ -4,13 +4,14 @@ import { Link } from 'react-router-dom';
 export default function AllProjects() {
     const projects = [
         {
-            id: 'fintech-audit',
-            title: 'FinTech Security Audit',
-            type: 'PEN-TEST',
+            id: 'automation',
+            title: 'Automation Security Alert',
+            type: 'Automation',
             desc: 'Conducted comprehensive penetration testing for a regional banking application, identifying critical SQL injection vulnerabilities.',
-            img: 'https://lh3.googleusercontent.com/aida-public/AB6AXuBdJJPZ7M18adgQbhBEWqY0Rhj-FxktYscSriaPPc3R-W4LegWNiVFwGb6ksGH-SjVCAxVwFDtefSouk64cP8WhWHOhxOx6Pa3U5lUJhKkBtAmM1hKF2AP6q7c45Ec_b2EFbbbebxhtrGWaP7Cv_FQwj3q00XQf8LiwgVCilpnVFR0Bwm1c2cKgM4RjILH5MUKs7vP0gjLEeMtd1VxF00qPWqX4TnNrzZV2ljqGAwwQ-6hjsr7DifPJJNFONQJvpSy9gx8e348aNRQ',
-            tags: ['Burp Suite', 'Python']
+            img: '/automation.png',
+            tags: ['Wazuh', 'N8N', 'Telegram']
         },
+        /* ===== KOMENTAR SEMENTARA ===== 
         {
             id: 'network-defense',
             title: 'Network Defense System',
@@ -52,10 +53,11 @@ export default function AllProjects() {
             img: 'https://lh3.googleusercontent.com/aida-public/AB6AXuDNfC37TwAQhf1zJXIm-7ghc_smBncOl8KzH_QUKbja_hb7ZujmqlPm6FCm94aG2NQENmqbJ7vr3BOd1vo16mYp9GCjdciOxTJ1SLLAZ9jalUGam_9upe4ibZ0fWG95EQJgzP0t1AGmesYuY4mzGjqf_tja-GdnEkeI5jSIvs76NS1NQkQS7l42BD6H31LWN2wKXejEm9BZSkrNblyBMhfPzN1_DY5VWJe-o7vQoMJEKTQiBxZUxv5UkfGisD03dUOdHsbRanLHquY',
             tags: ['PHP', 'CVE', 'Disclosure']
         }
+        ============================== */
     ];
 
     return (
-        <main className="flex-grow flex flex-col relative w-full pt-10 pb-20 px-4">
+        <main className="flex-grow flex flex-col relative w-full py-10 px-4">
             <div className="absolute inset-0 z-0 opacity-20 pointer-events-none bg-grid-pattern grid-bg"></div>
 
             <div className="max-w-5xl mx-auto w-full relative z-10">
@@ -78,41 +80,39 @@ export default function AllProjects() {
                     </div>
                 </div>
 
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <div className="flex flex-wrap justify-center gap-6">
                     {projects.map((project, idx) => (
                         <motion.div
                             initial={{ opacity: 0, y: 20 }}
                             animate={{ opacity: 1, y: 0 }}
                             transition={{ delay: idx * 0.1 }}
                             key={project.id}
-                            className="group bg-background-card border border-secondary rounded-xl overflow-hidden hover:border-primary/50 transition-all hover:-translate-y-2 shadow-md hover:shadow-[0_10px_30px_rgba(89,242,13,0.15)] flex flex-col h-full"
+                            className="w-full sm:w-[340px] flex-none"
                         >
-                            <div
-                                className="h-36 w-full bg-cover bg-center relative overflow-hidden"
-                                style={{ backgroundImage: `url('${project.img}')` }}
-                            >
-                                <div className="absolute inset-0 bg-black/50 group-hover:bg-black/20 transition-colors duration-500"></div>
-                                <div className="absolute top-3 right-3 bg-background-dark/80 backdrop-blur px-2 py-1 rounded text-[10px] font-mono text-primary border border-primary/20 shadow-sm">
-                                    {project.type}
-                                </div>
-                                <div className="absolute inset-x-0 bottom-0 h-1 bg-gradient-to-r from-transparent via-primary/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
-                            </div>
-
-                            <div className="p-5 flex flex-col flex-grow relative">
-                                <div className="absolute top-0 right-0 w-16 h-16 bg-primary/5 blur-xl rounded-full group-hover:bg-primary/20 transition-colors"></div>
-                                <h3 className="text-lg font-bold text-slate-100 mb-2 group-hover:text-primary transition-colors">{project.title}</h3>
-                                <p className="text-slate-400 text-xs mb-4 flex-grow line-clamp-3">{project.desc}</p>
-
-                                <div className="flex flex-wrap gap-1.5 mb-4">
-                                    {project.tags.map((tag, i) => (
-                                        <span key={i} className="text-[10px] text-slate-500 bg-background-dark px-2 py-0.5 rounded border border-secondary group-hover:border-primary/30 transition-colors shadow-inner uppercase font-bold tracking-wider">{tag}</span>
-                                    ))}
+                            <Link to={`/project/${project.id}`} className="block h-full group bg-background-card border border-secondary rounded-xl overflow-hidden hover:border-primary/50 transition-all hover:-translate-y-2 shadow-md hover:shadow-[0_10px_30px_rgba(89,242,13,0.15)] flex flex-col">
+                                <div
+                                    className="h-36 w-full bg-cover bg-center relative overflow-hidden"
+                                    style={{ backgroundImage: `url('${project.img}')` }}
+                                >
+                                    <div className="absolute inset-0 bg-black/50 group-hover:bg-black/20 transition-colors duration-500"></div>
+                                    <div className="absolute top-3 right-3 bg-background-dark/80 backdrop-blur px-2 py-1 rounded text-[10px] font-mono text-primary border border-primary/20 shadow-sm">
+                                        {project.type}
+                                    </div>
+                                    <div className="absolute inset-x-0 bottom-0 h-1 bg-gradient-to-r from-transparent via-primary/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
                                 </div>
 
-                                <Link to={`/project/${project.id}`} className="w-full py-2 rounded border border-secondary text-slate-300 hover:bg-primary hover:border-primary hover:text-background-dark transition-all text-xs font-bold text-center shadow-[inset_0_0_10px_rgba(255,255,255,0.05)] hover:shadow-[0_0_15px_rgba(89,242,13,0.3)] tracking-wide">
-                                    Read Report
-                                </Link>
-                            </div>
+                                <div className="p-5 flex flex-col flex-grow relative">
+                                    <div className="absolute top-0 right-0 w-16 h-16 bg-primary/5 blur-xl rounded-full group-hover:bg-primary/20 transition-colors"></div>
+                                    <h3 className="text-lg font-bold text-slate-100 mb-2 group-hover:text-primary transition-colors">{project.title}</h3>
+                                    <p className="text-slate-400 text-xs mb-4 flex-grow line-clamp-3">{project.desc}</p>
+
+                                    <div className="flex flex-wrap gap-1.5 mb-4">
+                                        {project.tags.map((tag, i) => (
+                                            <span key={i} className="text-[10px] text-slate-500 bg-background-dark px-2 py-0.5 rounded border border-secondary group-hover:border-primary/30 transition-colors shadow-inner uppercase font-bold tracking-wider">{tag}</span>
+                                        ))}
+                                    </div>
+                                </div>
+                            </Link>
                         </motion.div>
                     ))}
                 </div>

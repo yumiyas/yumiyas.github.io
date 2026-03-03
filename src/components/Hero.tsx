@@ -19,12 +19,12 @@ export default function Hero() {
                         <span className="text-primary text-xs font-bold tracking-widest uppercase">System Online</span>
                     </div>
 
-                    <h1 className="text-4xl md:text-6xl font-black leading-tight tracking-tight">
+                    <h1 className="text-4xl md:text-6xl font-black leading-tight tracking-tight break-words">
                         Muhamad Dias <br />
                         <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-green-600">IT Security</span>
                     </h1>
 
-                    <div className="p-4 rounded-lg bg-black/40 border border-secondary font-mono text-sm md:text-base text-slate-300 shadow-xl relative overflow-hidden group">
+                    <div className="p-4 rounded-lg bg-black/40 border border-secondary font-mono text-sm md:text-base text-slate-300 shadow-xl relative overflow-hidden group w-full break-words whitespace-normal">
                         <div className="absolute inset-0 bg-primary/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
                         <p className="mb-2"><span className="text-primary">root@kali:#</span> whoami</p>
                         <p className="pl-4 border-l-2 border-primary/20 mb-4">

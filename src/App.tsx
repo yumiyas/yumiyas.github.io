@@ -8,7 +8,7 @@ import AllProjects from './pages/AllProjects';
 function App() {
   return (
     <Router>
-      <div className="relative min-h-screen flex flex-col font-display bg-background-light dark:bg-background-dark text-slate-900 dark:text-slate-100 selection:bg-primary/30 selection:text-primary">
+      <div className="relative pt-[72px] min-h-[100dvh] w-full max-w-[100vw] flex flex-col font-display bg-background-light dark:bg-background-dark text-slate-900 dark:text-slate-100 selection:bg-primary/30 selection:text-primary">
         <Navbar />
         <Routes>
           <Route path="/" element={<Home />} />

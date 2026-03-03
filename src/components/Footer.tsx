@@ -10,12 +10,8 @@ export default function Footer() {
                         <span className="text-xl font-bold text-white">Cyber<span className="text-primary">Ethusiast</span></span>
                     </div>
                 </div>
-                <div className="border-t border-secondary pt-8 text-center md:text-left flex flex-col md:flex-row justify-between text-sm text-slate-500">
-                    <p>© 2026 CyberEnthusiast. All systems operational.</p>
-                    <div className="flex gap-4 justify-center mt-4 md:mt-0">
-                        <a className="hover:text-primary transition-colors" href="#">Privacy Protocol</a>
-                        <a className="hover:text-primary transition-colors" href="#">Terms of Engagement</a>
-                    </div>
+                <div className="border-t border-secondary pt-8 flex justify-center text-sm text-slate-500 w-full text-center">
+                    <p>© 2026 CyberEnthusiast</p>
                 </div>
             </div>
         </footer>
