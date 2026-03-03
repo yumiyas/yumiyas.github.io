@@ -33,7 +33,7 @@ export default function ContactModal({ isOpen, onClose }: { isOpen: boolean, onC
                                     <span className="material-symbols-outlined text-3xl">hub</span>
                                 </div>
                                 <h3 className="text-2xl font-bold text-slate-100">Initiate Contact</h3>
-                                <p className="text-slate-400 text-sm mt-2 text-center">Select a secure channel to establish connection with the system.</p>
+                                <p className="text-slate-400 text-sm mt-2 text-center">Select a secure channel to establish connection with me.</p>
                             </div>
 
                             <div className="flex flex-col gap-3">
